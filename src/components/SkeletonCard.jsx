@@ -24,6 +24,7 @@ const SkeletonCard = () => {
         baseColor="#dbdbdb"
         style={{
           marginTop: "30px",
+          borderRadius:'15px'
         }}
       />
       {/* TITLE */}
