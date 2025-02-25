@@ -24,9 +24,16 @@ const Product = () => {
   return (
     <>
       {!product ? (
-        <>
-          <p>Loading</p>
-        </>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <div className="spinner"></div>
+        </div>
       ) : (
         <div
           style={{
@@ -34,12 +41,12 @@ const Product = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            // marginTop: "20px",
             padding: "0 20px",
             background: "#f5f5f5",
             minHeight: "100vh",
           }}
         >
+          
           {/* Product Image */}
           <div
             style={{
@@ -49,36 +56,31 @@ const Product = () => {
               width: "900px",
               textAlign: "center",
               marginTop: "40px",
-              // background: "black",
             }}
           >
             <img
               src={product.image}
               alt={product.title}
               style={{
-                // width: "40%",
                 maxWidth: "300px",
                 height: "auto",
                 borderRadius: "10px",
-                objectFit: "cover",
+                objectFit: "contain",
                 boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
               }}
             />
-
             <div>
-              {/* Product Title */}
               <h1
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "1.6rem",
                   fontWeight: "bold",
                   color: "#333",
-                  textAlign: "center",
                   marginBottom: "10px",
+                  marginLeft: "7px",
                 }}
               >
                 {product.title}
               </h1>
-
               <div
                 style={{
                   display: "flex",
@@ -88,7 +90,6 @@ const Product = () => {
                   padding: "0px 20px",
                 }}
               >
-                {/* Discount */}
                 {product.discount > 0 && (
                   <p
                     style={{
@@ -98,45 +99,49 @@ const Product = () => {
                       borderRadius: "20px",
                       fontSize: "1rem",
                       fontWeight: "bold",
-                      // marginBottom: "20px",
                     }}
                   >
                     {product.discount}% OFF
                   </p>
                 )}
-                {/* Product Price */}
                 <p
                   style={{
                     fontSize: "1.5rem",
                     fontWeight: "bold",
                     color: "#007bff",
-                    // marginBottom: "20px",
                   }}
                 >
                   ${product.price}
                 </p>
-
                 <button
                   style={{
-                    padding: "10px",
-                    background: "transparent",
-                    borderRadius: "20px",
+                    padding: "12px 20px",
+                    backgroundColor: "#007bff",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "25px",
+                    cursor: "pointer",
+                    transition: "background-color 0.3s, transform 0.2s",
                   }}
                 >
                   Buy Now
                 </button>
+                <button
+                  style={{
+                    padding: "12px 20px",
+                    backgroundColor: "#28a745",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "25px",
+                    cursor: "pointer",
+                    transition: "background-color 0.3s, transform 0.2s",
+                  }}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "20px",
-            }}
-          ></div>
 
           {/* Product Description */}
           <div
@@ -153,8 +158,9 @@ const Product = () => {
             <h3
               style={{
                 fontSize: "1.6rem",
-                fontWeight: "bold",
+                fontWeight: "800",
                 marginBottom: "10px",
+                textDecoration: "underline",
               }}
             >
               Description
@@ -186,59 +192,26 @@ const Product = () => {
               Product Details
             </h3>
             <p
-              style={{
-                fontSize: "1rem",
-                color: "#555",
-                marginBottom: "10px",
-              }}
+              style={{ fontSize: "1rem", color: "#555", marginBottom: "10px" }}
             >
               <strong>Brand:</strong> {product.brand}
             </p>
             <p
-              style={{
-                fontSize: "1rem",
-                color: "#555",
-                marginBottom: "10px",
-              }}
+              style={{ fontSize: "1rem", color: "#555", marginBottom: "10px" }}
             >
               <strong>Model:</strong> {product.model}
             </p>
             <p
-              style={{
-                fontSize: "1rem",
-                color: "#555",
-                marginBottom: "10px",
-              }}
+              style={{ fontSize: "1rem", color: "#555", marginBottom: "10px" }}
             >
               <strong>Color:</strong> {product.color}
             </p>
             <p
-              style={{
-                fontSize: "1rem",
-                color: "#555",
-                marginBottom: "10px",
-              }}
+              style={{ fontSize: "1rem", color: "#555", marginBottom: "10px" }}
             >
               <strong>Category:</strong> {product.category}
             </p>
           </div>
-
-          {/* Add to Cart Button */}
-          {/* <button
-          style={{
-            padding: "15px 30px",
-            fontSize: "1.2rem",
-            backgroundColor: "#28a745",
-            color: "#fff",
-            border: "none",
-            cursor: "pointer",
-            transition: "background-color 0.3s",
-          }}
-          onMouseOver={(e) => (e.target.style.backgroundColor = "#218838")}
-          onMouseOut={(e) => (e.target.style.backgroundColor = "#28a745")}
-        >
-          Add to Cart
-        </button> */}
         </div>
       )}
     </>

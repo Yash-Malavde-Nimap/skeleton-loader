@@ -9,36 +9,74 @@ const SkeletonCard = () => {
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
-        // gap: "20px",
-        // padding:'20px',
         height: "440px",
-        width: "340px",
+        width: "360px",
         backgroundColor: "#fff",
-        borderRadius: "8px",
+        borderRadius: "15px",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
       }}
     >
+      {/* IMAGE */}
       <Skeleton
-      circle
+        // circle
         width={150}
         height={140}
-        baseColor="#969696"
+        baseColor="#dbdbdb"
         style={{
           marginTop: "30px",
         }}
       />
+      {/* TITLE */}
       <Skeleton
         width={250}
-        height={60}
-        baseColor="#969696"
+        height={50}
+        baseColor="#dbdbdb"
         style={{
           marginTop: "20px",
         }}
       />
+      {/* DESCRIPTION */}
       <Skeleton
         width={250}
-        height={120}
-        baseColor="#969696"
+        height={50}
+        baseColor="#dbdbdb"
+        style={{
+          marginTop: "20px",
+        }}
+      />
+
+      {/* PRICE AND DISCOUNT */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          width: "100%",
+          gap: "20px",
+        }}
+      >
+        <Skeleton
+          width={80}
+          height={30}
+          baseColor="#dbdbdb"
+          style={{
+            marginTop: "20px",
+          }}
+        />
+        <Skeleton
+          width={80}
+          height={30}
+          baseColor="#dbdbdb"
+          style={{
+            marginTop: "20px",
+          }}
+        />
+      </div>
+
+      {/* ADD CART BUTTON */}
+      <Skeleton
+        width={250}
+        height={40}
+        baseColor="#dbdbdb"
         style={{
           marginTop: "20px",
         }}
@@ -46,7 +84,7 @@ const SkeletonCard = () => {
       {/* <Skeleton
         width={250}
         height={50}
-        baseColor="#969696"
+        baseColor="#dbdbdb"
         style={{
           marginTop: "10px",
         }}

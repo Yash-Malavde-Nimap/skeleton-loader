@@ -6,24 +6,29 @@ const ProductCard = ({ product }) => {
     <div
       style={{
         backgroundColor: "#fff",
-        borderRadius: "12px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+        borderRadius: "15px",
+        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
         padding: "20px",
         textAlign: "center",
         width: "100%",
-        maxWidth: "300px",
-        height: "400px",
-        transition: "transform 0.3s, box-shadow 0.3s",
+        maxWidth: "320px",
+        height: "auto",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
         cursor: "pointer",
-        marginBottom: "20px",
+        marginBottom: "30px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        overflow: "hidden",
+        position: "relative",
       }}
       // onMouseOver={(e) => {
       //   e.currentTarget.style.transform = "scale(1.05)";
-      //   e.currentTarget.style.boxShadow = "0 6px 15px rgba(0, 0, 0, 0.2)";
+      //   e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.2)";
       // }}
       // onMouseOut={(e) => {
       //   e.currentTarget.style.transform = "scale(1)";
-      //   e.currentTarget.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)";
+      //   e.currentTarget.style.boxShadow = "0 6px 15px rgba(0, 0, 0, 0.1)";
       // }}
     >
       <img
@@ -35,6 +40,7 @@ const ProductCard = ({ product }) => {
           borderRadius: "10px",
           marginBottom: "15px",
           objectFit: "cover",
+          alignSelf:'center',
         }}
       />
 
@@ -48,7 +54,8 @@ const ProductCard = ({ product }) => {
           overflow: "hidden",
           textOverflow: "ellipsis",
           display: "block",
-          lineHeight: "1.2",
+          lineHeight: "1.4",
+          textDecoration: "none",
         }}
       >
         {product.title.slice(0, 50)} ...
@@ -61,51 +68,60 @@ const ProductCard = ({ product }) => {
           height: "60px",
           overflow: "hidden",
           textOverflow: "ellipsis",
-          marginBottom: "10px",
+          marginBottom: "15px",
+          lineHeight: "1.5",
         }}
       >
         {product.description.slice(0, 100)} ...
       </p>
 
-      <p
+      <div
         style={{
-          fontSize: "1.2rem",
-          color: "#007bff",
-          marginBottom: "10px",
-          fontWeight: "bold",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        ${product.price}
-      </p>
-
-      {product.discount > 0 && (
-        <span
+        <p
           style={{
-            backgroundColor: "#dc3545",
-            color: "#fff",
-            padding: "5px 10px",
-            borderRadius: "20px",
-            fontSize: "0.7rem",
+            fontSize: "1.2rem",
+            color: "#007bff",
             fontWeight: "bold",
-            marginTop: "10px",
-            marginRight: "4px",
+            marginBottom: "0",
           }}
         >
-          {product.discount}% OFF
-        </span>
-      )}
+          ${product.price}
+        </p>
+
+        {product.discount > 0 && (
+          <span
+            style={{
+              backgroundColor: "#dc3545",
+              color: "#fff",
+              padding: "6px 12px",
+              borderRadius: "20px",
+              fontSize: "0.8rem",
+              fontWeight: "bold",
+            }}
+          >
+            {product.discount}% OFF
+          </span>
+        )}
+      </div>
 
       <button
         style={{
-          padding: "10px 20px",
-          fontSize: "1rem",
+          padding: "12px 24px",
+          fontSize: "1.1rem",
           backgroundColor: "#28a745",
           color: "#fff",
           border: "none",
-          borderRadius: "5px",
+          borderRadius: "8px",
           cursor: "pointer",
-          transition: "background-color 0.3s",
-          marginTop: "15px",
+          transition: "background-color 0.3s ease",
+          marginTop: "20px",
+          width: "100%",
+          textTransform: "uppercase",
         }}
         onMouseOver={(e) => (e.target.style.backgroundColor = "#218838")}
         onMouseOut={(e) => (e.target.style.backgroundColor = "#28a745")}
