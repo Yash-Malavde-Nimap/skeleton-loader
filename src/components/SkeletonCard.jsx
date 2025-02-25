@@ -10,8 +10,8 @@ const SkeletonCard = () => {
         justifyContent: "start",
         alignItems: "center",
         height: "440px",
-        width: "360px",
-        backgroundColor: "#fff",
+        width: "320px",
+        backgroundColor: "#ced3af",
         borderRadius: "15px",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
       }}

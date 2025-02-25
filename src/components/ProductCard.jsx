@@ -5,13 +5,13 @@ const ProductCard = ({ product }) => {
   return (
     <div
       style={{
-        backgroundColor: "#fff",
+        backgroundColor: "#ced3af",
         borderRadius: "15px",
         boxShadow: "0 6px 15px rgba(0, 0, 0, 0.1)",
         padding: "20px",
         textAlign: "center",
         width: "100%",
-        maxWidth: "320px",
+        maxWidth: "280px",
         height: "auto",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
         cursor: "pointer",
@@ -31,18 +31,20 @@ const ProductCard = ({ product }) => {
       //   e.currentTarget.style.boxShadow = "0 6px 15px rgba(0, 0, 0, 0.1)";
       // }}
     >
-      <img
-        src={product.image}
-        alt={product.title}
-        style={{
-          width: "50%",
-          height: "auto",
-          borderRadius: "10px",
-          marginBottom: "15px",
-          objectFit: "cover",
-          alignSelf:'center',
-        }}
-      />
+      <Link to={`/products/${product.id}`}>
+        <img
+          src={product.image}
+          alt={product.title}
+          style={{
+            width: "50%",
+            height: "auto",
+            borderRadius: "10px",
+            marginBottom: "15px",
+            objectFit: "cover",
+            alignSelf: "center",
+          }}
+        />
+      </Link>
 
       <Link
         to={`/products/${product.id}`}
@@ -53,12 +55,13 @@ const ProductCard = ({ product }) => {
           marginBottom: "10px",
           overflow: "hidden",
           textOverflow: "ellipsis",
+          textWrap:"balance",
           display: "block",
-          lineHeight: "1.4",
+          lineHeight: "1.2",
           textDecoration: "none",
         }}
       >
-        {product.title.slice(0, 50)} ...
+        {product.title.slice(0, 60)}...
       </Link>
 
       <p
